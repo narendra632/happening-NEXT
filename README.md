@@ -19,11 +19,14 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-UI Component Library 
+# Technologies used in this project
 
-shadcn/ui - natively support tailwindcss
+
+shadcn/ui - UI component library, natively support tailwindcss
    - npx shadcn-ui@latest init
 
    components used: button - npx shadcn-ui@latest add button
 
 
+uploadthing/tw - file uploads for nextjs projects, have configuration with tailwind
+   - npm install uploadthing @uploadthing/react
