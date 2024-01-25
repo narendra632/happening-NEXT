@@ -26,6 +26,8 @@ shadcn/ui - UI component library, natively support tailwindcss
    - npx shadcn-ui@latest init
 
    components used: button - npx shadcn-ui@latest add button
+                    sheet - npx shadcn-ui@latest add sheet
+                    separator - npx shadcn-ui@latest add separator
 
 
 uploadthing/tw - file uploads for nextjs projects, have configuration with tailwind

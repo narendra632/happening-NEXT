@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import { Button } from '../ui/button'
 import NavItems from './NavItems'
+import MobileNav from './MobileNav'
 
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
         </Link>
 
         <SignedIn>
-          <nav>
+          <nav className='md:flex-between hidden w-full max-w-xs'>
             <NavItems/>
           </nav>
         </SignedIn>
@@ -23,6 +24,7 @@ const Header = () => {
 
           <SignedIn>
             <UserButton afterSignOutUrl='/'/>
+            <MobileNav/>
           </SignedIn>
 
           <SignedOut>
