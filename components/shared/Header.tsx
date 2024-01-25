@@ -1,7 +1,39 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { Button } from '../ui/button'
+import NavItems from './NavItems'
+
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <header className="w-full border-b">
+      <div className="wrapper flex items-center justify-between">
+        <Link href="/" className='w-36'>
+          <Image src="/assets/images/logo.svg" width={128} height={38} alt='Happening Logo' />
+        </Link>
+
+        <SignedIn>
+          <nav>
+            <NavItems/>
+          </nav>
+        </SignedIn>
+
+        <div className='flex w-32 justify-end gap-3'>
+
+          <SignedIn>
+            <UserButton afterSignOutUrl='/'/>
+          </SignedIn>
+
+          <SignedOut>
+            <Button asChild className='rounded-full' size='lg'>
+              <Link href='/sign-in'>Sign In</Link>
+            </Button>
+          </SignedOut>
+        </div>
+
+      </div>
+    </header>
   )
 }
 

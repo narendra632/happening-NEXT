@@ -30,3 +30,9 @@ shadcn/ui - UI component library, natively support tailwindcss
 
 uploadthing/tw - file uploads for nextjs projects, have configuration with tailwind
    - npm install uploadthing @uploadthing/react
+
+
+clerk authentication - easy signup/login using google made possible with clerk.
+   - npm install @clerk/nextjs
+   - wrap html layout with ClerkProvider
+   - create the middleware.ts
