@@ -38,3 +38,4 @@ clerk authentication - easy signup/login using google made possible with clerk.
    - npm install @clerk/nextjs
    - wrap html layout with ClerkProvider
    - create the middleware.ts
+   - npm install svix -used for clerk webhook
