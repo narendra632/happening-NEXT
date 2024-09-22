@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
+
 import './globals.css'
 
 const poppins = Poppins({
@@ -10,9 +11,11 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Happenin',
-  description: 'Happenin is a platform for event management.',
-  icons: '/assets/images/logo.svg',
+  title: 'Evently',
+  description: 'Evently is a platform for event management.',
+  icons: {
+    icon: '/assets/images/logo.svg'
+  }
 }
 
 export default function RootLayout({
