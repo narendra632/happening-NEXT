@@ -29,6 +29,9 @@ export async function POST(req: Request) {
  
   // Get the body
   const payload = await req.json()
+
+  console.log('Webhook payload:', payload); // Log entire payload
+
   const body = JSON.stringify(payload);
  
   // Create a new Svix instance with your secret.
@@ -64,16 +67,21 @@ export async function POST(req: Request) {
       firstName: first_name,
       lastName: last_name,
       photo: image_url,
-    }
+      role: 'user', // Default role for new users
+    };
+
+    console.log('Creating new user with data:', user); // Log user data being created
 
     const newUser = await createUser(user);
 
     if(newUser) {
       await clerkClient.users.updateUserMetadata(id, {
         publicMetadata: {
-          userId: newUser._id
+          userId: newUser._id,
+          role: 'user' // Set role in Clerk's metadata
         }
-      })
+      });
+      console.log('User metadata updated in Clerk with role: user');
     }
 
     return NextResponse.json({ message: 'OK', user: newUser })
@@ -88,6 +96,8 @@ export async function POST(req: Request) {
       username: username!,
       photo: image_url,
     }
+
+    console.log('Updating user with Clerk ID:', id, 'with data:', user); // Log user data being updated
 
     const updatedUser = await updateUser(id, user)
 

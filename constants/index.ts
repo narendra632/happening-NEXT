@@ -11,7 +11,27 @@ export const headerLinks = [
     label: 'My Profile',
     route: '/profile',
   },
-]
+  {
+    label: 'Resources',
+    route: '/resources',
+  },
+  {
+    label: 'Contribute',
+    route: '/contribute',
+  },
+  {
+    label: 'Gallery',
+    route: '/gallery',
+  },
+  {
+    label: 'Team',
+    route: '/team',
+  },
+  {
+    label: 'Blogs',
+    route: '/blogs',
+  }
+];
 
 export const eventDefaultValues = {
   title: '',
@@ -24,4 +44,4 @@ export const eventDefaultValues = {
   price: '',
   isFree: false,
   url: '',
-}
+};
